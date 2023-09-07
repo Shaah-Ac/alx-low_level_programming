@@ -1,8 +1,9 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- *  main - Entry point
+ *  main - this is the main put function
  * 
- * Return: Always 0 (success)
+ * Return: 0
  */
 int main(void)
 {
