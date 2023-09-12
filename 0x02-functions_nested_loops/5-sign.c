@@ -1,32 +1,25 @@
 #include "main.h"
 
 /**
- * more_numbers - prints more numbers
- * Return:void
+ * print_sign - prints the sign of a number
+ * @n: the number to be checked
+ * Return: 1 for positive num, -1 for negative num or zero for anything else
  */
-
-void more_numbers(void)
+int print_sign(int n)
 {
-	char n, c;
-	int i = 0;
-
-
-	while (i < 10)
+	if (n > 0)
 	{
-		for (n = 0; n <= 14; n++)
-		{
-			c = n;
-			if (n > 9)
-			{
-				_putchar('1');
-				c = n % 10;
-			}
-
-			_putchar('0' + c);
-		}
-
-		_putchar('\n');
-		i++;
+	_putchar(43);
+	return (1);
 	}
-
+	else if (n < 0)
+	}
+	_putchar(45);
+	return (-1);
+	}
+	else
+	{
+	_putchar(48);
+	return (0);
+	}
 }
