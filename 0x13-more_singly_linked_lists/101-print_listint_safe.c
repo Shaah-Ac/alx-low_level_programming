@@ -6,24 +6,26 @@
  *
  * Return: number of nodes in the list
  */
-size_t print_listint_safe(const listint_t *head)
-{
-	size_t num = 0;
-	long int k;
+size_t print_listint_safe(const listint_t *head) {
+  size_t nodes;
 
-	while (head)
-	{
-		k = head - head->next;
-		num++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (k > 0)
-			head = head->next;
-		else
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
-		}
+  // Declare and define the listint_t_size() function here, or in a separate header file.
+
+  nodes = listint_t_size(head);
+
+  if (nodes == 0) {
+    for (; head != NULL; nodes++) {
+      printf("[%p] %d\n", (void *)head, head->n);
+      head = head->next;
+    }
+  } else {
+    for (size_t index = 0; index < nodes; index++) {
+      printf("[%p] %d\n", (void *)head, head->n);
+      head = head->next;
+    }
+
+    printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
-	return (num);
+  return nodes;
 }
